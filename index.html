@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sunny Trivedi — Portfolio</title>
+  <style>
+    :root{
+      --bg:#121212;
+      --navy:#0A1A3A;
+      --accent:#1F51FF;
+      --text:#F8F8F0;
+      --muted:#9aa6bd;
+      --divider:linear-gradient(90deg,transparent,#1F51FF,transparent);
+    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui}
+    body{background:var(--bg);color:var(--text);}
+
+    /* Smooth animations */
+    .fade-up{opacity:0;transform:translateY(30px);transition:all .9s ease;}
+    .fade-up.visible{opacity:1;transform:translateY(0)}
+
+    /* FIXED HEADER */
+    header{
+      position:fixed;top:0;left:0;width:100%;z-index:10;
+      padding:18px 8%;background:rgba(7,11,26,0.6);
+      backdrop-filter:blur(10px);
+      display:flex;justify-content:space-between;align-items:center;
+      border-bottom:1px solid rgba(255,255,255,0.05);
+    }
+    header .logo{font-size:22px;font-weight:800;color:var(--accent)}
+    header nav a{margin-left:26px;color:var(--muted);text-decoration:none;font-size:15px}
+
+    /* HERO */
+    .hero{
+      height:92vh;
+      padding:160px 8% 60px;
+      display:flex;flex-direction:column;justify-content:center;
+      background:linear-gradient(135deg,#0A1A3A 0%,#070B1A 100%);
+    }
+    .initial{
+      width:150px;height:150px;border-radius:50%;background:var(--accent);
+      display:flex;align-items:center;justify-content:center;
+      font-size:56px;font-weight:700;margin-bottom:32px;
+      box-shadow:0 10px 45px rgba(31,81,255,0.45);
+    }
+    .hero h1{font-size:56px;font-weight:800;line-height:1.1;margin-bottom:18px;}
+    .hero p{font-size:18px;color:var(--muted);max-width:540px;line-height:1.6;}
+
+    /* SECTION */
+    .section{padding:90px 8%;}
+    .divider{height:2px;background:var(--divider);margin:60px 0;opacity:.5;}
+    .title{font-size:36px;font-weight:700;margin-bottom:40px;}
+
+    /* SERVICES */
+    .services-grid{display:grid;gap:26px;grid-template-columns:repeat(3,1fr);}
+    .service{
+      background:#0D132A;padding:26px;border-radius:16px;
+      border:1px solid rgba(255,255,255,0.06);
+      transition:0.3s;
+    }
+    .service:hover{transform:translateY(-6px);}
+    .service h3{font-size:20px;margin-bottom:10px;color:var(--accent)}
+    .service p{color:var(--muted);line-height:1.6;font-size:15px}
+
+    /* WORK */
+    .work-grid{display:grid;gap:32px;grid-template-columns:1fr 1fr;}
+    .work{
+      background:#0D132A;padding:26px;border-radius:16px;
+      border:1px solid rgba(255,255,255,0.06);
+    }
+    .work h3{font-size:20px;margin-bottom:6px;}
+    .work .meta{color:var(--muted);font-size:14px;margin-bottom:12px;}
+    .work ul{color:var(--muted);padding-left:20px;line-height:1.6;}
+
+    /* CONTACT */
+    .contact-box{
+      background:#0D132A;padding:32px;border-radius:16px;
+      border:1px solid rgba(255,255,255,0.08);
+      max-width:420px;
+    }
+    .contact-box p{margin:6px 0;color:var(--muted);}
+
+    /* FOOTER */
+    footer{text-align:center;color:var(--muted);padding:40px 0;}
+
+    @media(max-width:960px){.services-grid{grid-template-columns:1fr 1fr}.work-grid{grid-template-columns:1fr}}
+    @media(max-width:700px){.services-grid{grid-template-columns:1fr}}
+  </style>
+  <script>
+    document.addEventListener('mousemove', e => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 20;
+      const y = (e.clientY / window.innerHeight - 0.5) * 20;
+      document.querySelector('.hero').style.transform = `translate(${x}px, ${y}px)`;
+    });
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="logo">ST</div>
+  <nav>
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero fade-up">
+  <div class="initial">ST</div>
+  <h1>Sunny Trivedi</h1>
+  <p>Accountant & Tax Consultant helping businesses build clean books, automate reporting, and stay fully compliant with GST & Income Tax.</p>
+</section>
+
+<div class="divider"></div>
+
+<section id="services" class="section fade-up">
+  <div class="title">Services</div>
+  <div class="services-grid">
+    <div class="service">
+      <h3>GST Filing & Compliance</h3>
+      <p>Monthly returns, reconciliation, advisory, and notices handling.</p>
+    </div>
+    <div class="service">
+      <h3>Bookkeeping & Reporting</h3>
+      <p>Clean books, reconciliations, P&L, balance sheet, MIS dashboards.</p>
+    </div>
+    <div class="service">
+      <h3>Tax Planning & Filing</h3>
+      <p>Individual + business ITR filing, tax-saving planning, guidance.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="work" class="section fade-up">
+  <div class="title">My Work Experience</div>
+  <div class="work-grid">
+
+    <div class="work">
+      <h3>Devam Enterprise — Accounting Setup</h3>
+      <div class="meta">Head Accountant • 2020–2024</div>
+      <ul>
+        <li>Daily accounting, inventory, reconciliations</li>
+        <li>Payable systems + GST reporting</li>
+        <li>Prepared data for CA finalization</li>
+      </ul>
+    </div>
+
+    <div class="work">
+      <h3>Techno Ventures — MIS & Automation</h3>
+      <div class="meta">Freelance • 2024–Present</div>
+      <ul>
+        <li>Branch-wise P&L dashboards</li>
+        <li>Store reconciliation & MIS automation</li>
+      </ul>
+    </div>
+
+    <div class="work">
+      <h3>Orris Care — Financial Systems</h3>
+      <div class="meta">Freelance • 2025–Present</div>
+      <ul>
+        <li>Bookkeeping + financial statements</li>
+        <li>Zoho Books automation + forecasting</li>
+      </ul>
+    </div>
+
+    <div class="work">
+      <h3>Freelance Projects — Tax & Compliance</h3>
+      <div class="meta">Ongoing</div>
+      <ul>
+        <li>GST Filing, Income Tax Return, TDS</li>
+        <li>Custom Excel automation workflows</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="contact" class="section fade-up">
+  <div class="title">Contact</div>
+  <div class="contact-box">
+    <p><strong>Email:</strong> trivedisunny00@gmail.com</p>
+    <p><strong>LinkedIn:</strong> sunny-trivedi-06348926a</p>
+    <p><strong>Location:</strong> Ahmedabad, Gujarat</p>
+  </div>
+</section>
+
+<footer>© 2025 Sunny Trivedi — Portfolio</footer>
+
+<script>
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})
+  },{threshold:0.2});
+
+  document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
