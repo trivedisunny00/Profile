@@ -6,21 +6,21 @@
   <title>Sunny Trivedi — Portfolio</title>
   <style>
     :root{
-      --bg:#121212;
-      --Brightorange:#F8A747;      
+      --bg:#f7f7f7;
+      --Brightorange:#F8A747;    
       --accent:#1F51FF;
       --text:#F8F8F0;
       --muted:#9aa6bd;
       --divider:linear-gradient(90deg,transparent,#1F51FF,transparent);
     }
     *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui}
-    body{background:var(--bg);color:var(--text);}
+    body{background:var(--bg);color:var(--text)}
 
     /* Smooth animations */
     .fade-up{opacity:0;transform:translateY(30px);transition:all .9s ease;}
     .fade-up.visible{opacity:1;transform:translateY(0)}
 
-    /* FIXED HEADER */
+    /*FIXED HEADER */
     header{
       position:fixed;top:0;left:0;width:100%;z-index:10;
       padding:18px 8%;background:rgba(7,11,26,0.6);
@@ -42,19 +42,19 @@
       width:150px;height:150px;border-radius:50%;background:var(--accent);
       display:flex;align-items:center;justify-content:center;
       font-size:56px;font-weight:700;margin-bottom:32px;
-      box-shadow:0 10px 45px rgba(31,81,255,0.45);
+      box-shadow: 0 10px 45px rgba(31,81,255,0.45);
     }
-    .hero h1{font-size:56px;font-weight:800;line-height:1.1;margin-bottom:18px;}
-    .hero p{font-size:18px;color:var(--muted);max-width:540px;line-height:1.6;}
+    .hero h1{font-size:56px;font-weight:700;margin-bottom:18px}
+    .hero p{font-size:18px;color:var(--muted);max-width:540px;line-height:1.6}
 
     /* SECTION */
     .section{padding:90px 8%;}
-    .divider{height:2px;background:var(--divider);margin:60px 0;opacity:.5;}
-    .title{font-size:36px;font-weight:700;margin-bottom:40px;}
+    .divider{height:2px;background:var(--divider);margin:60px 0;opacity:.5}
+    .title{font-size:36px;font-weight:700;margin-bottom:40px}
 
     /* SERVICES */
     .services-grid{display:grid;gap:26px;grid-template-columns:repeat(3,1fr);}
-    .service{
+    .services{
       background:#0D132A;padding:26px;border-radius:16px;
       border:1px solid rgba(255,255,255,0.06);
       transition:0.3s;
@@ -69,9 +69,9 @@
       background:#0D132A;padding:26px;border-radius:16px;
       border:1px solid rgba(255,255,255,0.06);
     }
-    .work h3{font-size:20px;margin-bottom:6px;}
-    .work .meta{color:var(--muted);font-size:14px;margin-bottom:12px;}
-    .work ul{color:var(--muted);padding-left:20px;line-height:1.6;}
+    .work h3{font-size:20px;margin-bottom:6px}
+    .work .meta{color:var(--muted);font-size:14px;margin-bottom:12px}
+    .work ul{color:var(--muted);padding-left:20px;line-height:1.6}
 
     /* CONTACT */
     .contact-box{
@@ -79,13 +79,13 @@
       border:1px solid rgba(255,255,255,0.08);
       max-width:420px;
     }
-    .contact-box p{margin:6px 0;color:var(--muted);}
+    .contact-box p{color:var(--muted)}
 
-    /* FOOTER */
-    footer{text-align:center;color:var(--muted);padding:40px 0;}
+    /*FOOTER */
+    footer{text-align:center;color:var(--muted);padding:40px 0}
 
     @media(max-width:960px){.services-grid{grid-template-columns:1fr 1fr}.work-grid{grid-template-columns:1fr}}
-    @media(max-width:700px){.services-grid{grid-template-columns:1fr}}
+    @media(max-width:700px){.services-grid{grid-template-columns:1fr}.work-grid{grid-template-columns:1fr}}
   </style>
   <script>
     document.addEventListener('mousemove', e => {
@@ -139,8 +139,8 @@
   <div class="work-grid">
 
     <div class="work">
-      <h3>Devam Enterprise — Accounting Setup</h3>
-      <div class="meta">Head Accountant • 2020–2024</div>
+      <h3>Devam Enterprise — Accountant</h3>
+      <div class="meta">Head Accountant — 2019–2024</div>
       <ul>
         <li>Daily accounting, inventory, reconciliations</li>
         <li>Payable systems + GST reporting</li>
@@ -150,7 +150,7 @@
 
     <div class="work">
       <h3>Techno Ventures — MIS & Automation</h3>
-      <div class="meta">Freelance • 2024–Present</div>
+      <div class="meta">Freelance — 2024–Present</div>
       <ul>
         <li>Branch-wise P&L dashboards</li>
         <li>Store reconciliation & MIS automation</li>
@@ -159,7 +159,7 @@
 
     <div class="work">
       <h3>Orris Care — Financial Systems</h3>
-      <div class="meta">Freelance • 2025–Present</div>
+      <div class="meta">Freelance — 2021–Present</div>
       <ul>
         <li>Bookkeeping + financial statements</li>
         <li>Zoho Books automation + forecasting</li>
@@ -189,10 +189,10 @@
   </div>
 </section>
 
-<footer>© 2025 Sunny Trivedi — Portfolio</footer>
+<footer>• 2025 Sunny Trivedi • Portfolio</footer>
 
 <script>
-  const observer=new IntersectionObserver(entries=>{
+  const observer = new IntersectionObserver(entries => {
     entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})
   },{threshold:0.2});
 
